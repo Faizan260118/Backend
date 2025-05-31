@@ -42,11 +42,11 @@ const githubData = {
 }
 
 app.get('/', (req, res) => {
-    res.send('Hello World!')
+    res.send('<h1>Hello World!</h1>')
 })
 
 app.get('/linkedIn', (req, res) => {
-    res.send('faizanali')
+    res.send('https://linkedin.com/in/faizan-ali-351651252')
 })
 
 app.get('/docs', (req, res) => {
@@ -59,6 +59,21 @@ app.get('/login', (req, res) => {
 
 app.get('/github', (req, res) => {
     res.json(githubData)
+})
+
+app.get('/username', (req, res) => {
+    let userName = res.send(githubData.login);
+    res.send(userName);
+})
+
+app.get('/userbio', (req, res) => {
+    let userBio = res.send(githubData.bio);
+    res.send(userBio);
+})
+
+app.get('/userurl', (req, res) => {
+    let userUrl = res.send(githubData.url);
+    res.send(userUrl);
 })
 
 app.listen(process.env.PORT, () => {
